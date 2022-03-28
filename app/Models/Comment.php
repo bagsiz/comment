@@ -14,4 +14,13 @@ class Comment extends Model
         'user_name',
         'comment'
     ];
+
+    protected $with = [
+        'replies'
+    ];
+
+    public function replies()
+    {
+        return $this->hasMany(Comment::class, 'parent_id');
+    }
 }
