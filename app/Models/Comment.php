@@ -19,8 +19,12 @@ class Comment extends Model
         'replies'
     ];
 
-    public function replies()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(Comment::class, 'parent_id');
+        return $this->hasMany(Comment::class, 'parent_id')
+            ->orderBy('id', 'DESC');
     }
 }

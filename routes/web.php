@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::prefix('comments')->group(function () {
+    Route::get('/', [\App\Http\Controllers\CommentController::class, 'index']);
+    Route::post('/', [\App\Http\Controllers\CommentController::class, 'store']);
 });
