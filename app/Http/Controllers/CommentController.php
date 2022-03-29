@@ -20,6 +20,7 @@ class CommentController extends Controller
     }
 
     /**
+     * Fetch and list comments
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function index()
@@ -28,6 +29,7 @@ class CommentController extends Controller
     }
 
     /**
+     * Store comment
      * @param StoreCommentRequest $request
      * @return \Illuminate\Database\Eloquent\Model|mixed
      */

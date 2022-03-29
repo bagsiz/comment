@@ -235,9 +235,6 @@ export default {
                     parent_id: commentId,
                 }).then(res => {
                     if (res.status) {
-                        console.log(index, index2)
-                        console.log('asdsad', this.commentsData[index].replies[index2]);
-                        console.log('2222', this.commentsData);
                         this.commentsData[index].replies[index2].replies.unshift({ "id": res.body.id, "user_name": this.user_name, "comment": this.message });
                         this.commentsData[index].reply = 1;
                         Vue.set(this.replyCommentBoxs, index, 0);

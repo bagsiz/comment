@@ -11,6 +11,7 @@ class CommentService extends BaseService
     }
 
     /**
+     * Created Comments
      * @param array $request
      * @return \Illuminate\Database\Eloquent\Model|mixed
      */
@@ -20,6 +21,7 @@ class CommentService extends BaseService
     }
 
     /**
+     * Fetch Nested Comments
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function getNestedComments(): \Illuminate\Database\Eloquent\Collection
